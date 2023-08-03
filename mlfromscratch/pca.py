@@ -26,7 +26,7 @@ class PCA:
         eigenvectors = eigenvectors[idxs]
 
         # store first n eigenvectors
-        self.components = eigenvectors[0 : self.n_components]
+        self.components = eigenvectors[:self.n_components]
 
     def transform(self, X):
         # project data

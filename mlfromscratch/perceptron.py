@@ -33,8 +33,7 @@ class Perceptron:
 
     def predict(self, X):
         linear_output = np.dot(X, self.weights) + self.bias
-        y_predicted = self.activation_func(linear_output)
-        return y_predicted
+        return self.activation_func(linear_output)
 
     def _unit_step_func(self, x):
         return np.where(x >= 0, 1, 0)
@@ -48,8 +47,7 @@ if __name__ == "__main__":
     from sklearn import datasets
 
     def accuracy(y_true, y_pred):
-        accuracy = np.sum(y_true == y_pred) / len(y_true)
-        return accuracy
+        return np.sum(y_true == y_pred) / len(y_true)
 
     X, y = datasets.make_blobs(
         n_samples=150, n_features=2, centers=2, cluster_std=1.05, random_state=2

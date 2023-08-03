@@ -93,9 +93,7 @@ class DecisionTree:
         e_l, e_r = entropy(y[left_idxs]), entropy(y[right_idxs])
         child_entropy = (n_l / n) * e_l + (n_r / n) * e_r
 
-        # information gain is difference in loss before vs. after split
-        ig = parent_entropy - child_entropy
-        return ig
+        return parent_entropy - child_entropy
 
     def _split(self, X_column, split_thresh):
         left_idxs = np.argwhere(X_column <= split_thresh).flatten()
@@ -122,8 +120,7 @@ if __name__ == "__main__":
     from sklearn.model_selection import train_test_split
 
     def accuracy(y_true, y_pred):
-        accuracy = np.sum(y_true == y_pred) / len(y_true)
-        return accuracy
+        return np.sum(y_true == y_pred) / len(y_true)
 
     data = datasets.load_breast_cancer()
     X, y = data.data, data.target
