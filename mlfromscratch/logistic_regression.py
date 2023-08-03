@@ -46,8 +46,7 @@ if __name__ == "__main__":
     from sklearn import datasets
 
     def accuracy(y_true, y_pred):
-        accuracy = np.sum(y_true == y_pred) / len(y_true)
-        return accuracy
+        return np.sum(y_true == y_pred) / len(y_true)
 
     bc = datasets.load_breast_cancer()
     X, y = bc.data, bc.target

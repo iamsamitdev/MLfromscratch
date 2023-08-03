@@ -74,8 +74,7 @@ if __name__ == "__main__":
         return np.mean((y_true - y_pred) ** 2)
 
     def accuracy(y_true, y_pred):
-        accuracy = np.sum(y_true == y_pred) / len(y_true)
-        return accuracy
+        return np.sum(y_true == y_pred) / len(y_true)
 
     # Linear Regression
     X, y = datasets.make_regression(
